@@ -27,6 +27,7 @@ embedded_components {
   "group: \"playerBullet\"\n"
   "mask: \"ground\"\n"
   "mask: \"enemy\"\n"
+  "mask: \"boxes\"\n"
   "embedded_collision_shape {\n"
   "  shapes {\n"
   "    shape_type: TYPE_SPHERE\n"

@@ -18,6 +18,7 @@ embedded_components {
   "group: \"enemy\"\n"
   "mask: \"playerBullet\"\n"
   "mask: \"ground\"\n"
+  "mask: \"boxes\"\n"
   "embedded_collision_shape {\n"
   "  shapes {\n"
   "    shape_type: TYPE_SPHERE\n"
@@ -31,6 +32,8 @@ embedded_components {
   "  data: 10.0\n"
   "}\n"
   "locked_rotation: true\n"
+  "event_collision: false\n"
+  "event_trigger: false\n"
   ""
 }
 embedded_components {

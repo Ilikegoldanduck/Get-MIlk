@@ -2,7 +2,7 @@ local player = {}
 
 local health = 3
 
-local gunCd = 5
+local gunCd = 1
 local gunTracker = true --true = shootable; false = not shootable
 
 function player.getHealth()

@@ -53,6 +53,12 @@ end
 function on_message(self, message_id, message, sender)
 	if message.other_group == hash("playerBullet") then
 		go.delete()
+	elseif message.other_group == hash("ground") then
+		local vel = go.get("#collisionobject", "linear_velocity")
+		pprint(vel)
+		if math.sqrt(math.pow(vel.y, 2) + math.pow(vel.x, 2)) > 350 then
+			go.delete()
+		end
 	end
 end
 
