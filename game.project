@@ -24,3 +24,6 @@ scale_mode = stretch
 [project]
 title = Get Milk
 
+[sprite]
+max_count = 1024
+

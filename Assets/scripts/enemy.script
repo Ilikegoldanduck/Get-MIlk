@@ -1,10 +1,7 @@
 function init(self)
-	timer.delay(1, true, function()
+	timer.delay(2.5, true, function()
 		local playerPos = go.get_position("/player")
 		local pos = go.get_position()
-
-		pprint(pos)
-		pprint(playerPos)
 
 		local diffX = pos.x - playerPos.x
 		local diffY = pos.y - playerPos.y 

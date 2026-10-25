@@ -9,14 +9,7 @@ local gunTracker = true --true = shootable; false = not shootable
 
 local health = 3
 
-function reset()
-	go.set_position(vmath.vector3(0, 100, 0))
-	go.set_position("/camera", vmath.vector3(0, 100, 0))
-end
-
 function init(self)
-	pprint(960/2)
-	pprint(640/2)
 	msg.post(".", "acquire_input_focus")
 	timer.delay(.1, true, function()
 
@@ -73,7 +66,8 @@ function on_message(self, message_id, message, sender)
 		health = health - 1
 	end
 	if health == 0 then
-		reset()
+		msg.post()
+		health = 3
 	end
 end
 

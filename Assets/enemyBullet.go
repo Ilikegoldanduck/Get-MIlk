@@ -38,7 +38,7 @@ embedded_components {
   "    index: 0\n"
   "    count: 1\n"
   "  }\n"
-  "  data: 10.0\n"
+  "  data: 5.0\n"
   "}\n"
   "bullet: true\n"
   ""
