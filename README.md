@@ -1,8 +1,9 @@
 # Get Milk
 
-THis project is a fast-paced game about obtaining milk (the final objective)
+THis project is a fast-paced game about obtaining milk (the final objective). 
 
-Shoot your way through enemies and parkour your way out of dangerous situations to finally attain that precious dairy product that your kids need.
+You're just really thirsty and milk is the only thing that'll quench your thirst.
+Shoot your way through enemies and parkour your way out of dangerous situations to finally attain that precious dairy product that you need.
 
 Instructions:
 A to move Left
