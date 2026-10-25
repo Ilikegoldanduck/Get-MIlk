@@ -56,16 +56,24 @@ function fixed_update(self, dt)
 end
 
 function on_message(self, message_id, message, sender)
-	if message.other_group == hash("ground") then
+	local vel = go.get("#collisionobject", "linear_velocity")
+	if (message.other_group == hash("ground") and math.abs(vel.y) <= 2) or (message.other_group == hash("boxes") and math.abs(vel.y) <= 2) then
 		onGround = true
 	elseif (message.other_group == hash("enemyBullet")) and not hitframe then
 		player.setHealth(player.getHealth() - 1)
 		hitframe = true
-		timer.delay(1, false, function()
+		timer.delay(.1, false, function()
 			hitframe = false
 		end)
 	elseif message_id == hash("tix") then
 		player.addTix(1)
+	elseif message.other_group == hash("spikes") and not hitframe then
+		hitframe = true
+		go.set("#collisionobject", "linear_velocity", -vel + vmath.vector3(0, 500, 0))
+		player.setHealth(player.getHealth() - 1)
+		timer.delay(.1, false, function()
+			hitframe = false
+		end)
 	end
 	if player.getHealth() == 0 then
 		msg.post("/map#map", "reset", {})

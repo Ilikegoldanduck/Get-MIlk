@@ -51,7 +51,7 @@ function fixed_update(self, dt)
 end
 
 function on_message(self, message_id, message, sender)
-	if message.other_group == hash("playerBullet") then
+	if message.other_group == hash("playerBullet") or message.other_group == hash("spikes") then
 		factory.create("#tixfact", go.get_position(), nil, nil, 1)
 		go.delete()
 	elseif message.other_group == hash("ground") then

@@ -17,6 +17,7 @@ embedded_components {
   "mask: \"enemyBullet\"\n"
   "mask: \"walls\"\n"
   "mask: \"boxes\"\n"
+  "mask: \"spikes\"\n"
   "embedded_collision_shape {\n"
   "  shapes {\n"
   "    shape_type: TYPE_BOX\n"

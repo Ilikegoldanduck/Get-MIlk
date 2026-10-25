@@ -45,6 +45,8 @@ function on_message(self, message_id, message, sender)
 		if self.hitPoints <= 0 then
 			go.delete()
 		end
+	elseif message.other_group == hash("spikes") then
+		go.delete()
 	end
 end
 
