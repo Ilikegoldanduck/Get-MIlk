@@ -58,7 +58,7 @@ end
 function on_message(self, message_id, message, sender)
 	if message.other_group == hash("ground") then
 		onGround = true
-	elseif message.other_group == hash("enemy") and not hitframe then
+	elseif (message.other_group == hash("enemy") or message.other_group == hash("enemyBullet")) and not hitframe then
 		player.setHealth(player.getHealth() - 1)
 		hitframe = true
 		timer.delay(1, false, function()
