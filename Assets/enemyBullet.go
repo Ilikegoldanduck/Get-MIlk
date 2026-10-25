@@ -1,6 +1,6 @@
 components {
-  id: "playerBullet"
-  component: "/Assets/scripts/playerBullet.script"
+  id: "enemyBullet"
+  component: "/Assets/scripts/enemyBullet.script"
 }
 embedded_components {
   id: "bullet"

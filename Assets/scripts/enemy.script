@@ -1,7 +1,28 @@
 function init(self)
-	timer.delay(5, true, function()
+	timer.delay(1, true, function()
 		local playerPos = go.get_position("/player")
+		local pos = go.get_position()
 
+		pprint(pos)
+		pprint(playerPos)
+
+		local diffX = pos.x - playerPos.x
+		local diffY = pos.y - playerPos.y 
+
+		local dist = math.sqrt(math.pow(diffY, 2) + math.pow(diffX, 2))
+
+		local vel = 1000
+		local grav = -1000
+
+		local angley = math.pow(vel, 2) - math.sqrt(math.pow(vel, 4) - (grav * (grav * math.pow(diffX, 2) + 2 * diffY * math.pow(vel, 2))))
+		local anglex = grav * diffX
+
+		local angle = math.atan2(angley, anglex)
+
+		if dist < 1000 then
+			local bullet = factory.create("#bulletfact", go.get_position(), nil, {vector = vmath.vector3(math.cos(angle) * 1000, math.sin(angle) * 1000, 0)}, 1)
+		end
+		
 	end)
 end
 

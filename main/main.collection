@@ -210,6 +210,12 @@ embedded_instances {
   "locked_rotation: true\\n"
   "\"\n"
   "}\n"
+  "embedded_components {\n"
+  "  id: \"bulletfact\"\n"
+  "  type: \"factory\"\n"
+  "  data: \"prototype: \\\"/Assets/enemyBullet.go\\\"\\n"
+  "\"\n"
+  "}\n"
   ""
   position {
     x: 100.0

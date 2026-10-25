@@ -34,6 +34,7 @@ function fixed_update(self, dt)
 end
 
 function on_message(self, message_id, message, sender)
+	pprint(message)
 	go.delete()
 end
 
