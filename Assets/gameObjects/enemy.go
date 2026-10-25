@@ -21,6 +21,7 @@ embedded_components {
   "mask: \"boxes\"\n"
   "mask: \"walls\"\n"
   "mask: \"enemy\"\n"
+  "mask: \"player\"\n"
   "embedded_collision_shape {\n"
   "  shapes {\n"
   "    shape_type: TYPE_SPHERE\n"
