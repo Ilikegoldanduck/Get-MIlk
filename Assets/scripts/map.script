@@ -2,7 +2,7 @@ local enemy = {}
 local boxes = {}
 
 local enemyTable = {vmath.vector3(100, 100, 0)}
-local boxTable = {{vmath.vector3(50, 100, 0), 1}}
+local boxTable = {{vmath.vector3(50, 100, 0), 1, 3}}
 
 local player = require("Assets.scripts.player")
 
@@ -30,7 +30,7 @@ local function reset()
 	end
 	for i, v in ipairs(boxTable) do
 		pprint("done!")
-		table.insert(enemy, factory.create("#boxfact", v[1], nil, nil, v[2]))
+		table.insert(enemy, factory.create("#boxfact", v[1], nil, {hitPoints = v[3] or 10}, v[2] or 1))
 	end
 	
 end
