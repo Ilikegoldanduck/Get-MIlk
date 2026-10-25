@@ -18,7 +18,6 @@ function init(self)
 		angle = math.deg(math.atan2(mouseposY, mouseposX))
 		
 		if prevAngle - angle > 180 then
-			pprint(prevAngle)
 			if prevAngle < 0 then
 				go.set("/gun", "euler.z", prevAngle + 360)
 			else
@@ -67,7 +66,6 @@ function on_message(self, message_id, message, sender)
 			msg.post("/map#map", "reset", {})
 			player.setHealth(3)
 		end
-		pprint(message)
 	end
 end
 
@@ -92,7 +90,6 @@ function on_input(self, action_id, action)
 		local currVel = go.get("#collisionobject", "linear_velocity")
 		if action_id == hash("touch") and action.pressed then
 			if player.gunCheck() then
-				pprint("shot!")
 				local tempRad = math.rad(angle)
 				local bullet = factory.create("/player#bulletfact", go.get_position(), nil, {vector = vmath.vector3(math.cos(tempRad) * 100, math.sin(tempRad) * 100, 0)}, 1)
 			end
@@ -106,6 +103,7 @@ function on_input(self, action_id, action)
 			currVel = currVel + vmath.vector3(0, 350, 0)
 			go.set("#collisionobject", "linear_velocity", currVel)
 		elseif action_id == hash("Talk") and npc then
+			go.delete(npc)
 			msg.post("/camera#main", "talk", {npc})
 		end
 

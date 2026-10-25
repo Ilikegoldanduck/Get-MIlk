@@ -1,7 +1,6 @@
 go.property("vector", vmath.vector3())
 
 function init(self)
-	pprint("recieved")
 	go.set("#collisionobject", "linear_velocity", self.vector)
 	timer.delay(5, false, function()
 		go.delete()

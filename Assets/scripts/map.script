@@ -25,11 +25,9 @@ local function reset()
 	end
 	enemy = {}
 	for i, v in ipairs(enemyTable) do
-		pprint("done!")
 		table.insert(enemy, factory.create("#enemyfact", v, nil, nil, 1))
 	end
 	for i, v in ipairs(boxTable) do
-		pprint("done!")
 		table.insert(enemy, factory.create("#boxfact", v[1], nil, {hitPoints = v[3] or 10}, v[2] or 1))
 	end
 	

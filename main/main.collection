@@ -1231,7 +1231,7 @@ embedded_instances {
   ""
 }
 embedded_instances {
-  id: "sign"
+  id: "sign1"
   data: "embedded_components {\n"
   "  id: \"collisionobject\"\n"
   "  type: \"collisionobject\"\n"

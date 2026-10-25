@@ -9,7 +9,6 @@ function on_message(self, message_id, message, sender)
 			timer.delay(.1, false, function()
 				self.refractory = false
 			end)
-			pprint(self.hitPoints)
 		end
 		if self.hitPoints <= 0 then
 			go.delete()
