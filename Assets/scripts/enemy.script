@@ -17,7 +17,7 @@ function init(self)
 		local angle = math.atan2(angley, anglex)
 
 		if dist < 250 then
-			local bullet = factory.create("#bulletfact", go.get_position(), nil, {vector = vmath.vector3(math.cos(angle) * 100, math.sin(angle) * 100, 0)}, 1)
+			local bullet = factory.create("#bulletfact", go.get_position(), nil, {vector = vmath.vector3(math.cos(angle) * 500, math.sin(angle) * 500, 0)}, 1)
 		end
 		
 	end)

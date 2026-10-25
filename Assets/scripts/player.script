@@ -91,7 +91,7 @@ function on_input(self, action_id, action)
 		if action_id == hash("touch") and action.pressed then
 			if player.gunCheck() then
 				local tempRad = math.rad(angle)
-				local bullet = factory.create("/player#bulletfact", go.get_position(), nil, {vector = vmath.vector3(math.cos(tempRad) * 100, math.sin(tempRad) * 100, 0)}, 1)
+				local bullet = factory.create("/player#bulletfact", go.get_position(), nil, {vector = vmath.vector3(math.cos(tempRad) * 500, math.sin(tempRad) * 500, 0)}, 1)
 			end
 		elseif action_id == hash("Left") then
 			currVel = currVel + vmath.vector3(-5, 0, 0)

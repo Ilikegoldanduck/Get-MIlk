@@ -72,8 +72,8 @@ nodes {
 }
 nodes {
   position {
-    x: 40.0
-    y: 600.0
+    x: 157.0
+    y: 40.0
   }
   size {
     x: 50.0
@@ -85,13 +85,14 @@ nodes {
   }
   type: TYPE_BOX
   id: "health1"
+  layer: "layer"
   inherit_alpha: true
   size_mode: SIZE_MODE_AUTO
 }
 nodes {
   position {
-    x: 120.0
-    y: 600.0
+    x: 97.0
+    y: 40.0
   }
   size {
     x: 50.0
@@ -103,13 +104,14 @@ nodes {
   }
   type: TYPE_BOX
   id: "health2"
+  layer: "layer"
   inherit_alpha: true
   size_mode: SIZE_MODE_AUTO
 }
 nodes {
   position {
-    x: 200.0
-    y: 600.0
+    x: 37.0
+    y: 40.0
   }
   size {
     x: 50.0
@@ -121,6 +123,7 @@ nodes {
   }
   type: TYPE_BOX
   id: "health3"
+  layer: "layer"
   inherit_alpha: true
   size_mode: SIZE_MODE_AUTO
 }
