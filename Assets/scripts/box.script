@@ -10,7 +10,7 @@ function on_message(self, message_id, message, sender)
 				self.refractory = false
 			end)
 		end
-		if self.hitPoints <= 0 then
+		if self.hitPoints == 0 then
 			go.delete()
 		end
 	elseif message.other_group == hash("spikes") then
