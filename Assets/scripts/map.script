@@ -21,7 +21,8 @@ local boxTable = {
 	{vmath.vector3(2100, 200, 0), 2, 1}, 
 	{vmath.vector3(2100, 100, 0), 2, 1},
 	{vmath.vector3(-130, 140, 0), 2, 5},
-	{vmath.vector3(-245, 300, 0), 1, 5}
+	{vmath.vector3(-245, 300, 0), 1, 5},
+	{vmath.vector3(-1800, 300, 0), 1, 5}
 }
 
 local player = require("Assets.scripts.player")

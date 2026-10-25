@@ -18,7 +18,6 @@ local textOn = 1
 
 local function setHealth()
 	local health = player.getHealth()
-	pprint(health)
 	if health == 3 then
 		gui.set_enabled(gui.get_node("health1"), true)
 		gui.set_enabled(gui.get_node("health2"), true)
