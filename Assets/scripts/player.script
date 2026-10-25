@@ -2,8 +2,8 @@ local onGround = true
 
 function init(self)
 	msg.post(".", "acquire_input_focus")
-	timer.delay(.1, true, function()
-		go.set_position(go.get_position(), "/camera")
+	timer.delay(.5, true, function()
+		go.animate("/camera", "position", go.PLAYBACK_ONCE_FORWARD, go.get_position(), go.EASING_LINEAR, .6, 0)
 	end)
 end
 

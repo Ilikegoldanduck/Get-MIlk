@@ -23,7 +23,7 @@ embedded_instances {
   "  data: \"type: COLLISION_OBJECT_TYPE_DYNAMIC\\n"
   "mass: 1.0\\n"
   "friction: 0.1\\n"
-  "restitution: 0.5\\n"
+  "restitution: 0.1\\n"
   "group: \\\"player\\\"\\n"
   "mask: \\\"ground\\\"\\n"
   "embedded_collision_shape {\\n"
