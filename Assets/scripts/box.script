@@ -33,16 +33,18 @@ function fixed_update(self, dt)
 end
 
 function on_message(self, message_id, message, sender)
-	if not self.refractory then
-		self.hitPoints = self.hitPoints - 1
-		self.refractory = true
-		timer.delay(.1, false, function()
-			self.refractory = false
-		end)
-		pprint(self.hitPoints)
-	end
-	if self.hitPoints <= 0 then
-		go.delete()
+	if message.other_group == hash("playerBullet") or message.other_group == hash("enemy") then
+		if not self.refractory then
+			self.hitPoints = self.hitPoints - 1
+			self.refractory = true
+			timer.delay(.1, false, function()
+				self.refractory = false
+			end)
+			pprint(self.hitPoints)
+		end
+		if self.hitPoints <= 0 then
+			go.delete()
+		end
 	end
 end
 

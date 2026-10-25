@@ -2,7 +2,7 @@ local enemy = {}
 local boxes = {}
 
 local enemyTable = {vmath.vector3(100, 100, 0)}
-local boxTable = {vmath.vector3(100, 100, 0)}
+local boxTable = {vmath.vector3(50, 100, 0)}
 
 local function reset()
 	

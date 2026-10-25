@@ -1,12 +1,6 @@
 components {
-  id: "enemy"
-  component: "/Assets/scripts/enemy.script"
-}
-embedded_components {
-  id: "bulletfact"
-  type: "factory"
-  data: "prototype: \"/Assets/enemyBullet.go\"\n"
-  ""
+  id: "box"
+  component: "/Assets/scripts/box.script"
 }
 embedded_components {
   id: "collisionobject"

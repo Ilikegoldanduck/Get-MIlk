@@ -4,10 +4,7 @@ local mouseposX, mousepoxY = 0, 0
 local prevAngle = 0
 local angle = 0
 
-local gunCd = 5
-local gunTracker = true --true = shootable; false = not shootable
-
-local health = 3
+local player = require("Assets.scripts.player")
 local hitframe = false
 
 function init(self)
@@ -62,15 +59,15 @@ function on_message(self, message_id, message, sender)
 	if message.other_group == hash("ground") then
 		onGround = true
 	elseif message.other_group == hash("enemy") and not hitframe then
-		health = health - 1
+		player.setHealth(player.getHealth() - 1)
 		hitframe = true
-		timer.delay(2, false, function()
+		timer.delay(1, false, function()
 			hitframe = false
 		end)
 	end
-	if health == 0 then
+	if player.getHealth() == 0 then
 		msg.post("/map#map", "reset", {})
-		health = 3
+		player.setHealth(3)
 	end
 end
 
@@ -90,9 +87,11 @@ function on_input(self, action_id, action)
 
 	local currVel = go.get("#collisionobject", "linear_velocity")
 	if action_id == hash("touch") and action.pressed then
-		pprint("shot!")
-		local tempRad = math.rad(angle)
-		local bullet = factory.create("/player#bulletfact", go.get_position(), nil, {vector = vmath.vector3(math.cos(tempRad) * 1000, math.sin(tempRad) * 1000, 0)}, 1)
+		if player.gunCheck() then
+			pprint("shot!")
+			local tempRad = math.rad(angle)
+			local bullet = factory.create("/player#bulletfact", go.get_position(), nil, {vector = vmath.vector3(math.cos(tempRad) * 1000, math.sin(tempRad) * 1000, 0)}, 1)
+		end
 	elseif action_id == hash("Left") then
 		currVel = currVel + vmath.vector3(-10, 0, 0)
 		go.set("#collisionobject", "linear_velocity", currVel)
