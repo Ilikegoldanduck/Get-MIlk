@@ -1,20 +1,31 @@
 local onGround = true
 local mouseposX, mousepoxY = 0, 0
 
+local prevAngle = 0
 
 function init(self)
 	pprint(960/2)
 	pprint(640/2)
 	msg.post(".", "acquire_input_focus")
-	timer.delay(.25, true, function()
+	timer.delay(.1, true, function()
 
 		local angle = math.deg(math.atan2(mouseposY, mouseposX))
-		pprint(mouseposY .. mouseposX)
 		pprint(angle)
-		pprint(direction)
-		go.animate("/gun", "euler.z", go.PLAYBACK_ONCE_FORWARD, angle, go.EASING_LINEAR, .25, 0)
 		
-		go.animate("/camera", "position", go.PLAYBACK_ONCE_FORWARD, go.get_position(), go.EASING_LINEAR, .3, 0)
+		if prevAngle - angle > 180 then
+			pprint(prevAngle)
+			if prevAngle < 0 then
+				go.set("/gun", "euler.z", prevAngle + 360)
+			else
+				go.set("/gun", "euler.z", prevAngle - 360)
+			end
+			go.animate("/gun", "euler.z", go.PLAYBACK_ONCE_FORWARD, angle, go.EASING_LINEAR, .1, 0)
+		else
+			go.animate("/gun", "euler.z", go.PLAYBACK_ONCE_FORWARD, angle, go.EASING_LINEAR, .1, 0)
+		end
+		prevAngle = angle
+
+		go.animate("/camera", "position", go.PLAYBACK_ONCE_FORWARD, go.get_position(), go.EASING_LINEAR, .2, 0)
 	end)
 end
 
