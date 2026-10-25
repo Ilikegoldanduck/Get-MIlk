@@ -8,6 +8,7 @@ local gunCd = 5
 local gunTracker = true --true = shootable; false = not shootable
 
 local health = 3
+local hitframe = false
 
 function init(self)
 	msg.post(".", "acquire_input_focus")
@@ -60,13 +61,15 @@ end
 function on_message(self, message_id, message, sender)
 	if message.other_group == hash("ground") then
 		onGround = true
-	elseif message.other_group == hash("enemy") then
+	elseif message.other_group == hash("enemy") and not hitframe then
 		health = health - 1
-	elseif message.other_group == hash("enemyBullet") then
-		health = health - 1
+		hitframe = true
+		timer.delay(2, false, function()
+			hitframe = false
+		end)
 	end
 	if health == 0 then
-		msg.post()
+		msg.post("/map#map", "reset", {})
 		health = 3
 	end
 end

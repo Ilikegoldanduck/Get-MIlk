@@ -24,7 +24,7 @@ embedded_components {
   "mass: 0.1\n"
   "friction: 0.0\n"
   "restitution: 0.5\n"
-  "group: \"enemyBullet\"\n"
+  "group: \"enemy\"\n"
   "mask: \"ground\"\n"
   "mask: \"player\"\n"
   "mask: \"playerBullet\"\n"

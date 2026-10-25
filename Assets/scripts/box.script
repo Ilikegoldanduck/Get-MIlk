@@ -34,13 +34,14 @@ end
 
 function on_message(self, message_id, message, sender)
 	if not self.refractory then
-		hitPoints = hitPoints - 1
+		self.hitPoints = self.hitPoints - 1
 		self.refractory = true
 		timer.delay(.1, false, function()
 			self.refractory = false
 		end)
+		pprint(self.hitPoints)
 	end
-	if hitPoints == 0 then
+	if self.hitPoints <= 0 then
 		go.delete()
 	end
 end
