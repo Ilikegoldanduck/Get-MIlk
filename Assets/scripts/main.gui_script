@@ -3,7 +3,7 @@ local player = require("Assets.scripts.player")
 local inTalk = false
 
 local textTable = {
-	{"'A' to move left, 'D' to move right, 'SPACE' to jump, 'T' to talk", "I need milk...", "So... Thirsty...", "I need to go outside and get the milk."},
+	{"'A' to move left, 'D' to move right, 'SPACE' to jump, 'T' to talk, 'M1' to Shoot", "I need milk...", "So... Thirsty...", "I need to go outside and get the milk."},
 	{"I think I should follow the milk sign"},
 	{"Hi! I'm bob!", "Milk? I... don't sell that here...", "I sell M.I.L.K! \nIt's uh... Musically Induced Left-handed Kritters!", "Oh ok! Have a good day!", "I heard there was milk to the right by the way. \nIt's pretty close, you won't miss it!"},
 	{"heh. You fool. \nI AM NOT MILK", "I KNOW!! \nMWAHAAHAHAHA", "anyways, milk is to the right. \nI think they're almost out of stock"},

@@ -1,8 +1,26 @@
 local enemy = {}
 local boxes = {}
 
-local enemyTable = {vmath.vector3(0, 320, 0), vmath.vector3(560, 240, 0), vmath.vector3(940, -220, 0), vmath.vector3(2060, 140, 0)}
-local boxTable = {{vmath.vector3(380, 150, 0), 1, 3}, {vmath.vector3(420, 170, 0), 1, 1}, {vmath.vector3(420, 240, 0), 1, 1}, {vmath.vector3(610, -120, 0), 2, 10}, {vmath.vector3(1130, 130, 0), 2, 3}}
+local enemyTable = {
+	vmath.vector3(0, 320, 0), 
+	vmath.vector3(560, 240, 0), 
+	vmath.vector3(940, -220, 0), 
+	vmath.vector3(2060, 140, 0), 
+	vmath.vector3(2650, 180, 0), 
+	vmath.vector3(2140, 300, 0), 
+	vmath.vector3(2800, 200, 0)
+}
+
+local boxTable = {
+	{vmath.vector3(380, 150, 0), 1, 3}, 
+	{vmath.vector3(420, 170, 0), 1, 1}, 
+	{vmath.vector3(420, 240, 0), 1, 1}, 
+	{vmath.vector3(610, -120, 0), 2, 10}, 
+	{vmath.vector3(1130, 130, 0), 2, 3}, 
+	{vmath.vector3(2100, 300, 0), 2, 100}, 
+	{vmath.vector3(2100, 200, 0), 2, 1}, 
+	{vmath.vector3(2100, 100, 0), 2, 1}
+}
 
 local player = require("Assets.scripts.player")
 
@@ -24,17 +42,20 @@ local function reset()
 		end
 	end
 	enemy = {}
+	boxes = {}
 	for i, v in ipairs(enemyTable) do
 		table.insert(enemy, factory.create("#enemyfact", v, nil, nil, 1))
 	end
 	for i, v in ipairs(boxTable) do
-		table.insert(enemy, factory.create("#boxfact", v[1], nil, {hitPoints = v[3] or 10}, v[2] or 1))
+		table.insert(boxes, factory.create("#boxfact", v[1], nil, {hitPoints = v[3] or 10}, v[2] or 1))
 	end
 	
 end
 
 function init(self)
-	reset()
+	timer.delay(5, false. function()
+		reset()
+	end)
 end
 
 function on_message(self, message_id, message, sender)
