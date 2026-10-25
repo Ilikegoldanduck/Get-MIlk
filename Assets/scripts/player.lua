@@ -3,9 +3,18 @@ local player = {}
 local health = 3
 local tix = 0
 
+local moveToggle = false -- true = no move
 
 local gunCd = 1
 local gunTracker = true --true = shootable; false = not shootable
+
+function player.toggleMovement(t)
+    moveToggle = t
+end
+
+function player.getToggle()
+    return moveToggle
+end
 
 function player.reset()
     health = 3

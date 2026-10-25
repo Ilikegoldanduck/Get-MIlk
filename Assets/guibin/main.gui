@@ -16,17 +16,41 @@ nodes {
 }
 nodes {
   position {
-    x: 100.0
-    y: 30.0
+    x: 480.0
+    y: 140.0
+  }
+  size {
+    x: 880.0
+    y: 200.0
+  }
+  type: TYPE_BOX
+  id: "textBox"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    z: 1.0
   }
   size {
     x: 180.0
-    y: 40.0
+    y: 20.0
   }
-  type: TYPE_BOX
-  id: "box"
+  color {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  type: TYPE_TEXT
+  text: "omghiiiifhdahfdahsjfkdhajkdshfkjdsahkfjdhsa\n"
+  ""
+  font: "default"
+  id: "text"
+  parent: "textBox"
   inherit_alpha: true
-  size_mode: SIZE_MODE_AUTO
+}
+layers {
+  name: "layer"
 }
 material: "/builtins/materials/gui.material"
 adjust_reference: ADJUST_REFERENCE_PARENT

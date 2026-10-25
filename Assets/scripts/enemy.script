@@ -8,7 +8,7 @@ function init(self)
 
 		local dist = math.sqrt(math.pow(diffY, 2) + math.pow(diffX, 2))
 
-		local vel = 1000
+		local vel = 100
 		local grav = -1000
 
 		local angley = math.pow(vel, 2) - math.sqrt(math.pow(vel, 4) - (grav * (grav * math.pow(diffX, 2) + 2 * diffY * math.pow(vel, 2))))
@@ -16,8 +16,8 @@ function init(self)
 
 		local angle = math.atan2(angley, anglex)
 
-		if dist < 1000 then
-			local bullet = factory.create("#bulletfact", go.get_position(), nil, {vector = vmath.vector3(math.cos(angle) * 1000, math.sin(angle) * 1000, 0)}, 1)
+		if dist < 250 then
+			local bullet = factory.create("#bulletfact", go.get_position(), nil, {vector = vmath.vector3(math.cos(angle) * 100, math.sin(angle) * 100, 0)}, 1)
 		end
 		
 	end)
