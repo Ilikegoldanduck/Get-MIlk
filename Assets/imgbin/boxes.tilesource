@@ -3,7 +3,17 @@ tile_width: 16
 tile_height: 16
 collision_groups: "default"
 animations {
-  id: "anim"
+  id: "background"
+  start_tile: 113
+  end_tile: 113
+}
+animations {
+  id: "black"
+  start_tile: 171
+  end_tile: 171
+}
+animations {
+  id: "blue"
   start_tile: 128
   end_tile: 128
 }

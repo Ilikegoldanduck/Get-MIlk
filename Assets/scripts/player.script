@@ -1,9 +1,14 @@
 local onGround = true
+local mouseposX, mousepoxY = 0, 0
+
 
 function init(self)
 	msg.post(".", "acquire_input_focus")
-	timer.delay(.5, true, function()
-		go.animate("/camera", "position", go.PLAYBACK_ONCE_FORWARD, go.get_position(), go.EASING_LINEAR, .6, 0)
+	timer.delay(.25, true, function()
+		local angle = math.deg(math.atan2(mouseposX - go.get_position().y, mousepoxY, go.get_position().x))
+		pprint(angle)
+		go.animate("/gun", "euler.z", go.PLAYBACK_ONCE_FORWARD, angle, go.EASING_LINEAR, .25, 0)
+		go.animate("/camera", "position", go.PLAYBACK_ONCE_FORWARD, go.get_position(), go.EASING_LINEAR, .3, 0)
 	end)
 end
 
@@ -39,9 +44,11 @@ function on_message(self, message_id, message, sender)
 end
 
 function on_input(self, action_id, action)
+	mouseposX = action.x or mouseposX
+	mouseposY = action.y or mouseposY
+
 	local currVel = go.get("#collisionobject", "linear_velocity")
 	if action_id == hash("touch") and action.pressed then
-
 	elseif action_id == hash("Left") then
 		currVel = currVel + vmath.vector3(-10, 0, 0)
 		go.set("#collisionobject", "linear_velocity", currVel)
