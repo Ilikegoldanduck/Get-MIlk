@@ -19,7 +19,9 @@ local boxTable = {
 	{vmath.vector3(1130, 130, 0), 2, 3}, 
 	{vmath.vector3(2100, 300, 0), 2, 100}, 
 	{vmath.vector3(2100, 200, 0), 2, 1}, 
-	{vmath.vector3(2100, 100, 0), 2, 1}
+	{vmath.vector3(2100, 100, 0), 2, 1},
+	{vmath.vector3(-130, 140, 0), 2, 5},
+	{vmath.vector3(-245, 300, 0), 1, 5}
 }
 
 local player = require("Assets.scripts.player")
@@ -49,11 +51,10 @@ local function reset()
 	for i, v in ipairs(boxTable) do
 		table.insert(boxes, factory.create("#boxfact", v[1], nil, {hitPoints = v[3] or 10}, v[2] or 1))
 	end
-	
 end
 
 function init(self)
-	timer.delay(5, false. function()
+	timer.delay(2.5, false, function()
 		reset()
 	end)
 end
