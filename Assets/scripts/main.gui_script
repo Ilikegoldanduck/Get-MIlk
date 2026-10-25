@@ -7,8 +7,8 @@ local textTable = {
 	{"I think I should follow the milk sign"},
 	{"Hi! I'm bob!", "Milk? I... don't sell that here...", "I sell M.I.L.K! It's uh... Musically Induced Left-handed Kritters!", "Oh ok! Have a good day!", "I heard there was milk to the right by the way. It's pretty close, you won't miss it!"},
 	{"heh. You fool. I AM NOT MILK", "I KNOW!! MWAHAAHAHAHA", "anyways, milk is to the right. I think they're almost out of stock"},
-	{"Hi! You're our 100th customer!", "Milk? Yeah we sell that!!", "When does my shift end."},
-	{"Wow. You got the milk.", "Do you feel proud of yourself?", "Congrats.", "uhh *milk noises*", "yeah that's about it...", "why are you still here.", "umm, ladidadida sing song milk song lalala", "yeah just close the game bro"},
+	{"Hi! You're our 100th customer!", "Milk? Yeah we sell that!!", "Uhh, just go over there and stuff!", "When does my shift end..."},
+	{"Wow. You got the milk.", "Do you feel proud of yourself?", "Congrats.", "uhh *milk noises*", "yeah that's about it...", "why are you still here.", "umm, ladidadida sing song milk song lalala", "yeah just close the game bro", "byebye!!! I'm not doing this forever yk."},
 	{"Erm.. why down there?", "I guess I should follow it... I mean that's where the milk is I think.."},
 	{"I think it's close."}
 }
