@@ -33,7 +33,7 @@ embedded_components {
   "    index: 0\n"
   "    count: 1\n"
   "  }\n"
-  "  data: 10.0\n"
+  "  data: 5.0\n"
   "}\n"
   "locked_rotation: true\n"
   "event_collision: false\n"
@@ -54,6 +54,10 @@ embedded_components {
   "  texture: \"/builtins/graphics/particle_blob.tilesource\"\n"
   "}\n"
   ""
+  scale {
+    x: 0.5
+    y: 0.5
+  }
 }
 embedded_components {
   id: "tixfact"

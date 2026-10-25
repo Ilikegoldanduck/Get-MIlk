@@ -1,5 +1,6 @@
 go.property("hitPoints", 10)
 go.property("refractory", false)
+go.property("explosive", false)
 
 function init(self)
 	
@@ -43,6 +44,9 @@ function on_message(self, message_id, message, sender)
 			pprint(self.hitPoints)
 		end
 		if self.hitPoints <= 0 then
+			if self.explosive then
+				
+			end
 			go.delete()
 		end
 	elseif message.other_group == hash("spikes") then

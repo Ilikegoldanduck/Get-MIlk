@@ -1,0 +1,4 @@
+images {
+  image: "/Assets/imgbin/map p2.png"
+}
+extrude_borders: 2
