@@ -49,6 +49,27 @@ nodes {
   parent: "textBox"
   inherit_alpha: true
 }
+nodes {
+  position {
+    x: 480.0
+    y: 480.0
+    z: 1.0
+  }
+  size {
+    x: 180.0
+    y: 20.0
+  }
+  color {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  type: TYPE_TEXT
+  text: "Press \'T\' To Interact!"
+  font: "default"
+  id: "text1"
+  inherit_alpha: true
+}
 layers {
   name: "layer"
 }

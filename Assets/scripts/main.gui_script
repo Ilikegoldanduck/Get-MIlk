@@ -15,7 +15,7 @@ local chosenText = {}
 local textOn = 1
 
 function init(self)
-
+	msg.post(".", "acquire_input_focus")
 end
 
 function final(self)
@@ -26,26 +26,33 @@ end
 
 function update(self, dt)
 	gui.set_text(gui.get_node("info"), "Shootable: " .. tostring(player.gunCheckGui()) .. "\nHealth: " .. tostring(player.getHealth()) .. "\nTix: " .. tostring(player.getTix()))
+	gui.set_enabled(gui.get_node("text1"), false)
 end
 
 function on_message(self, message_id, message, sender)
+	pprint(message_id)
+	pprint(message)
 	if message_id == hash("talk") then
 		inTalk = true
 		gui.animate(gui.get_node("textBox"), "position.y", 140, gui.EASING_LINEAR, 1, 0)
-		if message[1] == "start" then
+		if message[1] == hash("/start") then
 			chosenText = textTable[1]
-		elseif message[1] == "sign" then
+		elseif message[1] == hash("/sign") then
 			chosenText = textTable[2]
-		elseif message[1] == "bob" then
+		elseif message[1] == hash("/bob") then
 			chosenText = textTable[3]
-		elseif message[1] == "notmilk" then
+		elseif message[1] == hash("/notmilk") then
 			chosenText = textTable[4]
-		elseif message[1] == "shopkeeper" then
+		elseif message[1] == hash("/shopkeeper") then
 			chosenText = textTable[5]
-		elseif message[1] == "milk" then
+		elseif message[1] == hash("/milk") then
 			chosenText = textTable[6]
 		end
+		gui.set_text(gui.get_node("text"), chosenText[textOn])
+		textOn = 2
 		player.toggleMovement(true)
+	elseif message_id == hash("npc") and not inTalk then
+		gui.set_enabled(gui.get_node("text1"), true)
 	end
 end
 
@@ -53,9 +60,10 @@ function on_input(self, action_id, action)
 	if inTalk and action_id == hash("Talk") and action.pressed then
 		if chosenText[textOn] then
 			gui.set_text(gui.get_node("text"), chosenText[textOn])
+			textOn = textOn + 1
 		else
 			inTalk = false
-			textOn = 0
+			textOn = 1
 			player.toggleMovement(false)
 			gui.animate(gui.get_node("textBox"), "position.y", -180, gui.EASING_LINEAR, 1, 0)
 		end

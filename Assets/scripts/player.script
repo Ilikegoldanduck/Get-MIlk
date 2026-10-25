@@ -1,5 +1,6 @@
 local onGround = true
-local mouseposX, mousepoxY = 0, 0
+local mouseposX = 0
+local mousepoxY = 0
 
 local prevAngle = 0
 local angle = 0
@@ -11,8 +12,9 @@ local npc = nil
 
 function init(self)
 	msg.post(".", "acquire_input_focus")
+	msg.post("/camera#main", "talk", {hash("/start")})
 	timer.delay(.1, true, function()
-
+		
 		angle = math.deg(math.atan2(mouseposY, mouseposX))
 		
 		if prevAngle - angle > 180 then
@@ -80,6 +82,7 @@ function on_message(self, message_id, message, sender)
 			end)
 		elseif message.other_group == hash("npc") then
 			npc = message.other_id
+			msg.post("/camera#main", "npc", {})
 		end
 		if player.getHealth() == 0 then
 			msg.post("/map#map", "reset", {})
@@ -91,20 +94,21 @@ end
 
 function on_input(self, action_id, action)
 
+
+	local windowX, windowY = window.get_size()
+
+	if action.x then
+		mouseposX = (action.x - windowX / 2)
+	else
+
+	end
+	if action.y then
+		mouseposY = (action.y - windowY / 2)
+	else
+
+	end
+	
 	if not player.getToggle() then
-
-		local windowX, windowY = window.get_size()
-
-		if action.x then
-			mouseposX = (action.x - windowX / 2)
-		else
-
-		end
-		if action.y then
-			mouseposY = (action.y - windowY / 2)
-		else
-
-		end
 
 		local currVel = go.get("#collisionobject", "linear_velocity")
 		if action_id == hash("touch") and action.pressed then
@@ -123,7 +127,7 @@ function on_input(self, action_id, action)
 			currVel = currVel + vmath.vector3(0, 350, 0)
 			go.set("#collisionobject", "linear_velocity", currVel)
 		elseif action_id == hash("Talk") and npc then
-			msg.post()
+			msg.post("/camera#main", "talk", {npc})
 		end
 
 	end
