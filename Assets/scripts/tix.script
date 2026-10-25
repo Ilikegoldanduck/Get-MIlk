@@ -1,6 +1,9 @@
+go.property("collected", false)
+
 function on_message(self, message_id, message, sender)
 	pprint(message.other_group)
-	if message.other_group == hash("player") then
+	if message.other_group == hash("player") and not self.collected then
+		self.collected = true
 		msg.post("/player#player", "tix", {})
 		go.delete()
 	end

@@ -11,7 +11,7 @@ function final(self)
 end
 
 function update(self, dt)
-	gui.set("info", "text", "Shootable: " .. player.)
+	gui.set_text(gui.get_node("info"), "Shootable: " .. tostring(player.gunCheckGui()) .. "\nHealth: " .. tostring(player.getHealth()) .. "\nTix: " .. tostring(player.getTix()))
 end
 
 function on_message(self, message_id, message, sender)

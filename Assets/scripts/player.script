@@ -64,6 +64,8 @@ function on_message(self, message_id, message, sender)
 		timer.delay(1, false, function()
 			hitframe = false
 		end)
+	elseif message_id == hash("tix") then
+		player.addTix(1)
 	end
 	if player.getHealth() == 0 then
 		msg.post("/map#map", "reset", {})

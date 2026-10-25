@@ -37,4 +37,12 @@ function player.gunCheckGui()
    return gunTracker 
 end
 
+function player.getTix()
+    return tix
+end
+
+function player.addTix(v)
+    tix = tix + v
+end
+
 return player

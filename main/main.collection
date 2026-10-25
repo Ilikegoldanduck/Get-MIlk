@@ -200,7 +200,11 @@ embedded_instances {
 }
 embedded_instances {
   id: "camera"
-  data: "embedded_components {\n"
+  data: "components {\n"
+  "  id: \"main\"\n"
+  "  component: \"/Assets/guibin/main.gui\"\n"
+  "}\n"
+  "embedded_components {\n"
   "  id: \"camera\"\n"
   "  type: \"camera\"\n"
   "  data: \"aspect_ratio: 1.0\\n"
