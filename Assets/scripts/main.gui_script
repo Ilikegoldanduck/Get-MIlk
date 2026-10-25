@@ -3,14 +3,14 @@ local player = require("Assets.scripts.player")
 local inTalk = false
 
 local textTable = {
-	{"'A' to move left, 'D' to move right, 'SPACE' to jump, 'T' to talk, 'M1' to Shoot", "I need milk...", "So... Thirsty...", "I need to go outside and get the milk."},
-	{"I think I should follow the milk sign"},
+	{"'A' to move left, 'D' to move right, 'SPACE' to jump, 'T' to talk, 'M1' to Shoot", "Boxes are breakable", "I need milk...", "So... Thirsty...", "I need to go outside and get the milk."},
+	{"Woah! This sign has \"Milk\" on it!", "I think I should follow the milk sign!", "Might be where the milk is..."},
 	{"Hi! I'm bob!", "Milk? I... don't sell that here...", "I sell M.I.L.K! \nIt's uh... Musically Induced Left-handed Kritters!", "Oh ok! Have a good day!", "I heard there was milk to the right by the way. \nIt's pretty close, you won't miss it!"},
 	{"heh. You fool. \nI AM NOT MILK", "I KNOW!! \nMWAHAAHAHAHA", "anyways, milk is to the right. \nI think they're almost out of stock"},
 	{"Hi! You're our 10,000th customer!", "Milk? Yeah we sell that!!", "Uhh, just go over there and stuff!", "When does my shift end..."},
 	{"Wow. You got the milk.", "Do you feel proud of yourself?", "Congrats.", "uhh *milk noises*", "yeah that's about it...", "why are you still here.", "umm, ladidadida sing song milk song lalala", "yeah just close the game bro", "byebye!!! I'm not doing this forever yk."},
-	{"Erm.. why down there?", "I guess I should follow it... \nI mean that's where the milk is I think.."},
-	{"I think it's close."}
+	{"Erm.. why down there?", "I guess I should follow it...", "I mean.. signs are always right, right?"},
+	{"I think it's close.", "I can feel the milk inside my soul", "that... sounded so bad T^T"}
 }
 
 local chosenText = {}
