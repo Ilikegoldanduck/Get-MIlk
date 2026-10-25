@@ -1,9 +1,17 @@
 local player = {}
 
 local health = 3
+local tix = 0
+
 
 local gunCd = 1
 local gunTracker = true --true = shootable; false = not shootable
+
+function player.reset()
+    health = 3
+    tix = 0
+    gunTracker = true
+end
 
 function player.getHealth()
     return health

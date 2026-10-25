@@ -19,6 +19,8 @@ embedded_components {
   "mask: \"playerBullet\"\n"
   "mask: \"ground\"\n"
   "mask: \"boxes\"\n"
+  "mask: \"walls\"\n"
+  "mask: \"enemy\"\n"
   "embedded_collision_shape {\n"
   "  shapes {\n"
   "    shape_type: TYPE_SPHERE\n"
@@ -49,5 +51,11 @@ embedded_components {
   "  sampler: \"texture_sampler\"\n"
   "  texture: \"/builtins/graphics/particle_blob.tilesource\"\n"
   "}\n"
+  ""
+}
+embedded_components {
+  id: "tixfact"
+  type: "factory"
+  data: "prototype: \"/Assets/gameObjects/tix.go\"\n"
   ""
 }

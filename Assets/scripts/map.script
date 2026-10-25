@@ -2,12 +2,16 @@ local enemy = {}
 local boxes = {}
 
 local enemyTable = {vmath.vector3(100, 100, 0)}
-local boxTable = {vmath.vector3(50, 100, 0)}
+local boxTable = {{vmath.vector3(50, 100, 0), 1}}
+
+local player = require("Assets.scripts.player")
 
 local function reset()
 	
 	go.set_position(vmath.vector3(0, 100, 0), "/player")
 	go.set_position(vmath.vector3(0, 100, 0), "/camera")
+
+	player.reset()
 
 	for i, v in ipairs(enemy or {}) do
 		if go.exists(v) then
@@ -26,7 +30,7 @@ local function reset()
 	end
 	for i, v in ipairs(boxTable) do
 		pprint("done!")
-		table.insert(enemy, factory.create("#boxfact", v, nil, nil, 1))
+		table.insert(enemy, factory.create("#boxfact", v[1], nil, nil, v[2]))
 	end
 	
 end
