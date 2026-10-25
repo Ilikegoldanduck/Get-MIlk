@@ -1,6 +1,6 @@
 components {
-  id: "playerBullet"
-  component: "/Assets/scripts/playerBullet.script"
+  id: "enemyBullet"
+  component: "/Assets/scripts/enemyBullet.script"
 }
 embedded_components {
   id: "bullet"
@@ -12,9 +12,6 @@ embedded_components {
   "  texture: \"/builtins/graphics/particle_blob.tilesource\"\n"
   "}\n"
   ""
-  position {
-    z: 2.0
-  }
   scale {
     x: 0.5
     y: 0.5
@@ -29,6 +26,8 @@ embedded_components {
   "restitution: 0.5\n"
   "group: \"playerBullet\"\n"
   "mask: \"ground\"\n"
+  "mask: \"enemy\"\n"
+  "mask: \"enemyBullet\"\n"
   "embedded_collision_shape {\n"
   "  shapes {\n"
   "    shape_type: TYPE_SPHERE\n"
@@ -39,7 +38,8 @@ embedded_components {
   "    index: 0\n"
   "    count: 1\n"
   "  }\n"
-  "  data: 5.0\n"
+  "  data: 10.0\n"
   "}\n"
+  "bullet: true\n"
   ""
 }
