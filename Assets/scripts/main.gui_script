@@ -1,5 +1,18 @@
 local player = require("Assets.scripts.player")
 
+local inTalk = false
+
+local textTable = {
+	{"I need milk...", "So... Thirsty..."},
+	{"I think I should follow the milk sign"},
+	{"Hi! I'm bob!", "Milk? I... don't sell that here...", "I sell M.I.L.K! It's uh... Musically Induced Left-handed Kritters!", "Oh ok! Have a good day!", "I heard there was milk to the right by the way. It's pretty close, you won't miss it!"},
+	{"I... don't think that's milk..."},
+	{"Hi! You're our 100th customer!", "Milk? Yeah we sell that!!", "When does my shift end."},
+	{"Wow. You got the milk.", "Do you feel proud of yourself?", "Congrats.", "uhh *milk noises*"}
+}
+
+local chosenText = {}
+
 function init(self)
 
 end
@@ -15,21 +28,29 @@ function update(self, dt)
 end
 
 function on_message(self, message_id, message, sender)
-	-- Add message-handling code here
-	-- Learn more: https://defold.com/manuals/message-passing/
-	-- Remove this function if not needed
+	if message_id == hash("talk") then
+		inTalk = true
+		gui.animate(gui.get_node("textBox"), )
+		if message[1] == "start" then
+			chosenText = textTable[1]
+		elseif message[1] == "sign" then
+			chosenText = textTable[2]
+		elseif message[1] == "bob" then
+			chosenText = textTable[3]
+		elseif message[1] == "notmilk" then
+			chosenText = textTable[4]
+		elseif message[1] == "shopkeeper" then
+			chosenText = textTable[5]
+		elseif message[1] == "milk" then
+			chosenText = textTable[6]
+		end
+	end
 end
 
 function on_input(self, action_id, action)
-	-- Add input-handling code here. The game object this script is attached to
-	-- must have acquired input focus:
-	--
-	--    msg.post(".", "acquire_input_focus")
-	--
-	-- All mapped input bindings will be received. Mouse and touch input will
-	-- be received regardless of where on the screen it happened.
-	-- Learn more: https://defold.com/manuals/input/
-	-- Remove this function if not needed
+	if inTalk then
+
+	end
 end
 
 function on_reload(self)

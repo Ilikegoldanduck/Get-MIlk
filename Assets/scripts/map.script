@@ -1,8 +1,8 @@
 local enemy = {}
 local boxes = {}
 
-local enemyTable = {vmath.vector3(0, 320, 0), vmath.vector3(560, 240, 0)}
-local boxTable = {{vmath.vector3(380, 150, 0), 1, 3}, {vmath.vector3(420, 170, 0), 1, 1}, {vmath.vector3(420, 240, 0), 1, 1}, {vmath.vector3(610, -120, 0), 2, 10}}
+local enemyTable = {vmath.vector3(0, 320, 0), vmath.vector3(560, 240, 0), vmath.vector3(940, -220, 0), vmath.vector3(2060, 140, 0)}
+local boxTable = {{vmath.vector3(380, 150, 0), 1, 3}, {vmath.vector3(420, 170, 0), 1, 1}, {vmath.vector3(420, 240, 0), 1, 1}, {vmath.vector3(610, -120, 0), 2, 10}, {vmath.vector3(1130, 130, 0), 2, 3}}
 
 local player = require("Assets.scripts.player")
 
