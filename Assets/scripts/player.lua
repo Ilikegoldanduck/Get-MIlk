@@ -1,7 +1,6 @@
 local player = {}
 
 local health = 3
-local tix = 0
 
 local moveToggle = false -- true = no move
 
@@ -44,14 +43,6 @@ end
 
 function player.gunCheckGui()
    return gunTracker 
-end
-
-function player.getTix()
-    return tix
-end
-
-function player.addTix(v)
-    tix = tix + v
 end
 
 return player

@@ -59,9 +59,3 @@ embedded_components {
     y: 0.15
   }
 }
-embedded_components {
-  id: "tixfact"
-  type: "factory"
-  data: "prototype: \"/Assets/gameObjects/tix.go\"\n"
-  ""
-}
