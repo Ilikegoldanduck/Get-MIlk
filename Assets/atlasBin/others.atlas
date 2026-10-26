@@ -1,0 +1,19 @@
+images {
+  image: "/Assets/imgbin/frame0009.png"
+}
+images {
+  image: "/Assets/imgbin/frame0006.png"
+}
+images {
+  image: "/Assets/imgbin/frame0007.png"
+}
+images {
+  image: "/Assets/imgbin/frame0008.png"
+}
+images {
+  image: "/Assets/imgbin/frame0011.png"
+}
+images {
+  image: "/Assets/imgbin/frame0012.png"
+}
+extrude_borders: 2

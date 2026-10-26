@@ -30,7 +30,6 @@ local player = require("Assets.scripts.player")
 local function reset()
 	
 	go.set_position(vmath.vector3(-300.0, 150, 0), "/player")
-	go.set_position(vmath.vector3(2000.0, 300, 0), "/player")
 	go.set_position(vmath.vector3(-300.0, 150, 0), "/camera")
 
 	player.reset()

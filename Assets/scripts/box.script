@@ -12,6 +12,8 @@ function on_message(self, message_id, message, sender)
 		end
 		if self.hitPoints == 0 then
 			go.delete()
+		elseif self.hitPoints == 1 then
+			sprite.play_flipbook("#sprite", "frame0010")
 		end
 	elseif message.other_group == hash("spikes") then
 		go.delete()

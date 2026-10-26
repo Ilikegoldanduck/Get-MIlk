@@ -1,0 +1,31 @@
+images {
+  image: "/Assets/imgbin/frame0000.png"
+}
+images {
+  image: "/Assets/imgbin/frame0001.png"
+}
+images {
+  image: "/Assets/imgbin/frame0002.png"
+}
+images {
+  image: "/Assets/imgbin/frame0003.png"
+}
+images {
+  image: "/Assets/imgbin/frame0004.png"
+}
+images {
+  image: "/Assets/imgbin/frame0005.png"
+}
+images {
+  image: "/Assets/imgbin/frame0006.png"
+}
+images {
+  image: "/Assets/imgbin/frame0007.png"
+}
+images {
+  image: "/Assets/imgbin/frame0008.png"
+}
+images {
+  image: "/Assets/imgbin/frame0009.png"
+}
+extrude_borders: 2

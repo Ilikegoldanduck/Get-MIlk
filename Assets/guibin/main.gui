@@ -3,6 +3,10 @@ fonts {
   name: "default"
   font: "/builtins/fonts/default.font"
 }
+textures {
+  name: "others"
+  texture: "/Assets/atlasBin/others.atlas"
+}
 nodes {
   size {
     x: 200.0
@@ -75,15 +79,12 @@ nodes {
     x: 157.0
     y: 40.0
   }
-  size {
-    x: 50.0
-    y: 50.0
-  }
   color {
     y: 0.0
     z: 0.0
   }
   type: TYPE_BOX
+  texture: "others/frame0012"
   id: "health1"
   layer: "layer"
   inherit_alpha: true
@@ -94,15 +95,12 @@ nodes {
     x: 97.0
     y: 40.0
   }
-  size {
-    x: 50.0
-    y: 50.0
-  }
   color {
     y: 0.0
     z: 0.0
   }
   type: TYPE_BOX
+  texture: "others/frame0012"
   id: "health2"
   layer: "layer"
   inherit_alpha: true
@@ -113,15 +111,12 @@ nodes {
     x: 37.0
     y: 40.0
   }
-  size {
-    x: 50.0
-    y: 50.0
-  }
   color {
     y: 0.0
     z: 0.0
   }
   type: TYPE_BOX
+  texture: "others/frame0012"
   id: "health3"
   layer: "layer"
   inherit_alpha: true

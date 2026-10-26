@@ -38,7 +38,7 @@ embedded_components {
 embedded_components {
   id: "sprite"
   type: "sprite"
-  data: "default_animation: \"boxes\"\n"
+  data: "default_animation: \"frame0009\"\n"
   "material: \"/builtins/materials/sprite.material\"\n"
   "size {\n"
   "  x: 32.0\n"
@@ -46,7 +46,11 @@ embedded_components {
   "}\n"
   "textures {\n"
   "  sampler: \"texture_sampler\"\n"
-  "  texture: \"/Assets/imgbin/boxes_copy.tilesource\"\n"
+  "  texture: \"/Assets/atlasBin/others.atlas\"\n"
   "}\n"
   ""
+  scale {
+    x: 0.25
+    y: 0.25
+  }
 }

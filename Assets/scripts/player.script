@@ -9,12 +9,23 @@ local player = require("Assets.scripts.player")
 local hitframe = false
 
 local npc = nil
+local next = 0
 
 function init(self)
 	msg.post(".", "acquire_input_focus")
 	msg.post("/camera#main", "talk", {hash("/start")})
 	timer.delay(.1, true, function()
 		
+		if hitframe then
+			sprite.play_flipbook("#sprite", "frame0004")
+		else
+			next = next + 1
+			if next == 3 then
+				next = 0
+			end
+			sprite.play_flipbook("#sprite", "frame000" .. tostring(next))
+		end
+
 		angle = math.deg(math.atan2(mouseposY, mouseposX))
 		
 		if prevAngle - angle > 180 then
@@ -57,6 +68,7 @@ function on_message(self, message_id, message, sender)
 			player.setHealth(player.getHealth() - 1)
 			timer.delay(.1, false, function()
 				hitframe = false
+				sprite.play_flipbook("")
 			end)
 		elseif message.other_group == hash("npc") then
 			npc = message.other_id

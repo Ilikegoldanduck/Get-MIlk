@@ -1,7 +1,16 @@
+go.property("next", 0)
+
 function init(self)
 	timer.delay(2.5, true, function()
 		local playerPos = go.get_position("/player")
 		local pos = go.get_position()
+
+		
+		next = next + 1
+		if next == 3 then
+			next = 0
+		end
+		sprite.play_flipbook("#sprite", "frame000" .. tostring(next + 4))
 
 		local diffX = pos.x - playerPos.x
 		local diffY = pos.y - playerPos.y 

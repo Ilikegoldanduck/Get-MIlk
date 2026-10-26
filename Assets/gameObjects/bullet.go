@@ -5,16 +5,16 @@ components {
 embedded_components {
   id: "bullet"
   type: "sprite"
-  data: "default_animation: \"anim\"\n"
+  data: "default_animation: \"frame0007\"\n"
   "material: \"/builtins/materials/sprite.material\"\n"
   "textures {\n"
   "  sampler: \"texture_sampler\"\n"
-  "  texture: \"/builtins/graphics/particle_blob.tilesource\"\n"
+  "  texture: \"/Assets/atlasBin/others.atlas\"\n"
   "}\n"
   ""
   scale {
-    x: 0.25
-    y: 0.25
+    x: 0.075
+    y: 0.075
   }
 }
 embedded_components {

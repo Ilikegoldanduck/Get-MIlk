@@ -1,0 +1,10 @@
+images {
+  image: "/Assets/imgbin/frame0004.png"
+}
+images {
+  image: "/Assets/imgbin/frame0005.png"
+}
+images {
+  image: "/Assets/imgbin/frame0006.png"
+}
+extrude_borders: 2
