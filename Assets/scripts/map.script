@@ -1,5 +1,4 @@
-local enemy = {}
-local boxes = {}
+local map = {}
 
 local inReset = false
 
@@ -46,23 +45,19 @@ local function reset()
 
 	player.reset()
 
-	for i, v in ipairs(enemy or {}) do
+	for i, v in ipairs(map or {}) do
 		if go.exists(v) then
 			go.delete(v)
 		end
 	end
-	for i, v in ipairs(boxes or {}) do
-		if go.exists(v) then
-			go.delete(v)
-		end
-	end
-	enemy = {}
-	boxes = {}
+
+	map = {}
+	
 	for i, v in ipairs(boxTable) do
-		table.insert(boxes, factory.create("#boxfact", v[1], nil, {hitPoints = v[3] or 10}, v[2] or 1))
+		table.insert(map, factory.create("#boxfact", v[1], nil, {hitPoints = v[3] or 10}, v[2] or 1))
 	end
 	for i, v in ipairs(enemyTable) do
-		table.insert(enemy, factory.create("#enemyfact", v, nil, nil, 1))
+		table.insert(map, factory.create("#enemyfact", v, nil, nil, 1))
 	end
 end
 

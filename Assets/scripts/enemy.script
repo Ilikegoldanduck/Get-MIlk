@@ -1,16 +1,16 @@
 go.property("next", 0)
 
 function init(self)
-	timer.delay(2.5, true, function()
-		local playerPos = go.get_position("/player")
-		local pos = go.get_position()
-
-		
+	timer.delay(.1, true, function()
 		self.next = self.next + 1
 		if self.next == 3 then
 			self.next = 0
 		end
 		sprite.play_flipbook("#sprite", "frame000" .. tostring(self.next + 4))
+	end)
+	timer.delay(2.5, true, function()
+		local playerPos = go.get_position("/player")
+		local pos = go.get_position()
 
 		local diffX = pos.x - playerPos.x
 		local diffY = pos.y - playerPos.y 
@@ -39,6 +39,7 @@ function on_message(self, message_id, message, sender)
 		msg.post("/soundhandler#soundHandler", "snd", {"bloop"})
 		go.delete()
 	elseif message.other_group == hash("ground") then
+		msg.post("/soundhandler#soundHandler", "snd", {"bloop"})
 		local vel = go.get("#collisionobject", "linear_velocity")
 		if math.sqrt(math.pow(vel.y, 2) + math.pow(vel.x, 2)) > 350 then
 			go.delete()

@@ -74,6 +74,7 @@ function on_message(self, message_id, message, sender)
 		gui.set_text(gui.get_node("text"), chosenText[textOn])
 		textOn = 2
 		player.toggleMovement(true)
+		msg.post("/soundhandler#soundHandler", "snd", {"meow"})
 	elseif message_id == hash("npc") and not inTalk then
 		gui.set_enabled(gui.get_node("text1"), true)
 	elseif message_id == hash("reset") then
