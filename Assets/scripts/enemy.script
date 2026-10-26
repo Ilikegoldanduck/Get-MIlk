@@ -39,7 +39,6 @@ function on_message(self, message_id, message, sender)
 		msg.post("/soundhandler#soundHandler", "snd", {"bloop"})
 		go.delete()
 	elseif message.other_group == hash("ground") then
-		msg.post("/soundhandler#soundHandler", "snd", {"bloop"})
 		local vel = go.get("#collisionobject", "linear_velocity")
 		if math.sqrt(math.pow(vel.y, 2) + math.pow(vel.x, 2)) > 350 then
 			go.delete()
