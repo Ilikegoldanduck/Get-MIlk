@@ -76,6 +76,9 @@ function on_message(self, message_id, message, sender)
 		player.toggleMovement(true)
 	elseif message_id == hash("npc") and not inTalk then
 		gui.set_enabled(gui.get_node("text1"), true)
+	elseif message_id == hash("reset") then
+		gui.set_position(gui.get_node("box"), vmath.vector3(480, 1140, 0))
+		gui.animate(gui.get_node("box"), "position.y", -500, gui.EASING_LINEAR, 1, 0)
 	end
 end
 

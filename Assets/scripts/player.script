@@ -78,8 +78,11 @@ function on_message(self, message_id, message, sender)
 		end
 		if player.getHealth() == 0 then
 			--splat sfx
-			msg.post("/map#map", "reset", {})
-			player.setHealth(3)
+			msg.post("/camera#main", "reset", {})
+			timer.delay(.5, false, function()
+				msg.post("/map#map", "reset", {})
+				player.setHealth(3)
+			end)
 		end
 	end
 end
