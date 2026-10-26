@@ -8,5 +8,6 @@ function init(self)
 end
 
 function on_message(self, message_id, message, sender)
+	sound.play("wallHit")
 	go.delete()
 end

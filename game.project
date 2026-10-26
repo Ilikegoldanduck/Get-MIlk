@@ -31,3 +31,6 @@ max_count = 1024
 [factory]
 max_count = 1024
 
+[sound]
+max_sound_buffers = 128
+

@@ -8,5 +8,6 @@ function init(self)
 end
 
 function on_message(self, message_id, message, sender)
+	msg.post("/soundhandler#soundHandler", "snd", {"wallHit"})
 	go.delete()
 end
