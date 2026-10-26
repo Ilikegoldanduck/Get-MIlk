@@ -115,7 +115,7 @@ function on_input(self, action_id, action)
 			currVel = currVel + vmath.vector3(5, 0, 0)
 			go.set("#collisionobject", "linear_velocity", currVel)
 		elseif action_id == hash("Jump") and onGround then
-			currVel = currVel + vmath.vector3(0, 300, 0)
+			currVel = currVel + vmath.vector3(0, 350, 0)
 			go.set("#collisionobject", "linear_velocity", currVel)
 		elseif action_id == hash("Talk") and npc then
 			go.delete(npc)
