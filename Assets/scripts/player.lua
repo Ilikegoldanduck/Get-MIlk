@@ -5,7 +5,7 @@ local tix = 0
 
 local moveToggle = false -- true = no move
 
-local gunCd = 1
+local gunCd = .5
 local gunTracker = true --true = shootable; false = not shootable
 
 function player.toggleMovement(t)

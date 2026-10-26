@@ -10,7 +10,8 @@ local textTable = {
 	{"Hi! You're our 10,000th customer!", "Milk? Yeah we sell that!!", "Uhh, just go over there and stuff!", "When does my shift end..."},
 	{"Wow. You got the milk.", "Do you feel proud of yourself?", "Congrats.", "uhh *milk noises*", "yeah that's about it...", "why are you still here.", "umm, ladidadida sing song milk song lalala", "yeah just close the game bro", "byebye!!! I'm not doing this forever yk."},
 	{"Erm.. why down there?", "I guess I should follow it...", "I mean.. signs are always right, right?"},
-	{"I think it's close.", "I can feel the milk inside my soul", "that... sounded so bad T^T"}
+	{"I think it's close.", "I can feel the milk inside my soul", "that... sounded so bad T^T"},
+	{"smh.. Can't believe there's a whole hole here.", "I still need to go on tho... I need the milk."}
 }
 
 local chosenText = {}
@@ -67,6 +68,8 @@ function on_message(self, message_id, message, sender)
 			chosenText = textTable[7]
 		elseif message[1] == hash("/sign3") then
 			chosenText = textTable[8]
+		elseif message[1] == hash("/optional1") then
+			chosenText = textTable[9]
 		end
 		gui.set_text(gui.get_node("text"), chosenText[textOn])
 		textOn = 2

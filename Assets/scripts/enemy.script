@@ -6,11 +6,11 @@ function init(self)
 		local pos = go.get_position()
 
 		
-		next = next + 1
-		if next == 3 then
-			next = 0
+		self.next = self.next + 1
+		if self.next == 3 then
+			self.next = 0
 		end
-		sprite.play_flipbook("#sprite", "frame000" .. tostring(next + 4))
+		sprite.play_flipbook("#sprite", "frame000" .. tostring(self.next + 4))
 
 		local diffX = pos.x - playerPos.x
 		local diffY = pos.y - playerPos.y 

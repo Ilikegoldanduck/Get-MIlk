@@ -4,11 +4,14 @@ local boxes = {}
 local enemyTable = {
 	vmath.vector3(0, 320, 0), 
 	vmath.vector3(560, 240, 0), 
+	vmath.vector3(580, 240, 0), 
 	vmath.vector3(940, -220, 0), 
 	vmath.vector3(2060, 140, 0), 
 	vmath.vector3(2650, 180, 0), 
 	vmath.vector3(2140, 300, 0), 
-	vmath.vector3(2800, 200, 0)
+	vmath.vector3(2800, 200, 0),
+	vmath.vector3(100, 360, 0),
+	vmath.vector3(-200, 250, 0)
 }
 
 local boxTable = {
@@ -55,7 +58,7 @@ local function reset()
 end
 
 function init(self)
-	timer.delay(2.5, false, function()
+	timer.delay(.5, false, function()
 		reset()
 	end)
 end
