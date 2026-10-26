@@ -4,7 +4,7 @@ go.property("refractory", false)
 function on_message(self, message_id, message, sender)
 	if message.other_group == hash("playerBullet") or message.other_group == hash("enemyBullet") then
 		if not self.refractory then
-			sound.play("hammer")
+			msg.post("/soundhandler#soundHandler", "snd", {"hammer"})
 			self.hitPoints = self.hitPoints - 1
 			self.refractory = true
 			timer.delay(.1, false, function()

@@ -55,16 +55,14 @@ function on_message(self, message_id, message, sender)
 		if (message.other_group == hash("ground") and math.abs(vel.y) <= 2) or (message.other_group == hash("boxes") and math.abs(vel.y) <= 2) then
 			onGround = true
 		elseif (message.other_group == hash("enemyBullet")) and not hitframe then
-			sound.play("bloop")
+			msg.post("/soundhandler#soundHandler", "snd", {"bloop"})
 			player.setHealth(player.getHealth() - 1)
 			hitframe = true
 			timer.delay(.1, false, function()
 				hitframe = false
 			end)
-		elseif message_id == hash("tix") then
-			player.addTix(1)
 		elseif message.other_group == hash("spikes") and not hitframe then
-			sound.play("bloop")
+			msg.post("/soundhandler#soundHandler", "snd", {"bloop"})
 			hitframe = true
 			go.set("#collisionobject", "linear_velocity", -vel + vmath.vector3(0, 350, 0))
 			player.setHealth(player.getHealth() - 1)
@@ -107,7 +105,7 @@ function on_input(self, action_id, action)
 		local currVel = go.get("#collisionobject", "linear_velocity")
 		if action_id == hash("touch") and action.pressed then
 			if player.gunCheck() then
-				sound.play("bubble")
+				msg.post("/soundhandler#soundHandler", "snd", {"bubble"})
 				local tempRad = math.rad(angle)
 				local bullet = factory.create("/player#bulletfact", go.get_position(), nil, {vector = vmath.vector3(math.cos(tempRad) * 500, math.sin(tempRad) * 500, 0)}, 1)
 			end

@@ -8,6 +8,6 @@ function init(self)
 end
 
 function on_message(self, message_id, message, sender)
-	sound.play("wallHit")
+	msg.post("/soundhandler#soundHandler", "snd", {"bubble"})
 	go.delete()
 end
