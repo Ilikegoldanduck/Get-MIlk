@@ -1561,5 +1561,9 @@ embedded_instances {
   "  id: \"wallHit\"\n"
   "  component: \"/Assets/sndbin/wallHit.sound\"\n"
   "}\n"
+  "components {\n"
+  "  id: \"soundHandler\"\n"
+  "  component: \"/Assets/scripts/soundHandler.script\"\n"
+  "}\n"
   ""
 }

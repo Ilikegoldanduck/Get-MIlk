@@ -68,7 +68,6 @@ function on_message(self, message_id, message, sender)
 			player.setHealth(player.getHealth() - 1)
 			timer.delay(.5, false, function()
 				hitframe = false
-				sprite.play_flipbook("")
 			end)
 		elseif message.other_group == hash("npc") then
 			npc = message.other_id

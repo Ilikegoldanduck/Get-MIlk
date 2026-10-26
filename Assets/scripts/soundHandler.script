@@ -33,7 +33,7 @@ end
 
 function on_message(self, message_id, message, sender)
 	if message_id == hash("snd") then
-		sound.play(message[1])
+		sound.play( "#" .. message[1])
 	end
 end
 
