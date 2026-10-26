@@ -125,11 +125,11 @@ nodes {
 nodes {
   position {
     x: 480.0
-    y: 960.0
+    y: 1140.0
   }
   size {
     x: 1000.0
-    y: 640.0
+    y: 1000.0
   }
   color {
     x: 0.0

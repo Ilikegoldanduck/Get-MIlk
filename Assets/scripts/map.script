@@ -1,6 +1,8 @@
 local enemy = {}
 local boxes = {}
 
+local inReset = false
+
 local enemyTable = {
 	vmath.vector3(0, 320, 0), 
 	vmath.vector3(560, 240, 0), 
@@ -71,7 +73,9 @@ function init(self)
 end
 
 function on_message(self, message_id, message, sender)
-	if message_id == hash("reset") then
+	if message_id == hash("reset") and not inReset then
+		inReset = true
 		reset()
+		inReset = false
 	end
 end

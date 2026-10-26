@@ -17,7 +17,7 @@ function init(self)
 	timer.delay(.1, true, function()
 		
 		if hitframe then
-			sprite.play_flipbook("#sprite", "frame0004")
+			sprite.play_flipbook("#sprite", "frame0003")
 		else
 			next = next + 1
 			if next == 3 then
@@ -68,7 +68,7 @@ function on_message(self, message_id, message, sender)
 			hitframe = true
 			go.set("#collisionobject", "linear_velocity", -vel + vmath.vector3(0, 350, 0))
 			player.setHealth(player.getHealth() - 1)
-			timer.delay(.1, false, function()
+			timer.delay(.5, false, function()
 				hitframe = false
 				sprite.play_flipbook("")
 			end)
