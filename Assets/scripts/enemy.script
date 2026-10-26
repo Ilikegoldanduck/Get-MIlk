@@ -27,6 +27,7 @@ function init(self)
 			local angle = math.atan2(angley, anglex)
 
 			if angle == angle then
+				--Bubble sfx
 				local bullet = factory.create("#bulletfact", go.get_position(), nil, {vector = vmath.vector3(math.cos(angle or 0) * 500, math.sin(angle or 0) * 500, 0)}, 1)
 			end
 		end
@@ -35,6 +36,7 @@ end
 
 function on_message(self, message_id, message, sender)
 	if message.other_group == hash("playerBullet") or message.other_group == hash("spikes") then
+		--mc ding sfx
 		go.delete()
 	elseif message.other_group == hash("ground") then
 		local vel = go.get("#collisionobject", "linear_velocity")

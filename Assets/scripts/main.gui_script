@@ -82,6 +82,7 @@ end
 function on_input(self, action_id, action)
 	if inTalk and action_id == hash("Talk") and action.pressed then
 		if chosenText[textOn] then
+			--bloop sfx
 			gui.set_text(gui.get_node("text"), chosenText[textOn])
 			textOn = textOn + 1
 		else
