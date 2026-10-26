@@ -539,6 +539,7 @@ embedded_instances {
   "mask: \\\"playerBullet\\\"\\n"
   "mask: \\\"enemyBullets\\\"\\n"
   "mask: \\\"enemy\\\"\\n"
+  "mask: \\\"enemyBullet\\\"\\n"
   "mask: \\\"boxes\\\"\\n"
   "embedded_collision_shape {\\n"
   "  shapes {\\n"
