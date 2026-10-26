@@ -1,5 +1,7 @@
 # Get Milk
 
+This project was built using Defold. You should play this game in the state that it comes in, the windowed state. I believe that having hardware that increases the number of pixels per physical pixel may affect the game..? (something like Mac Retina Display idk) I also suggest turning your sound down because it may be loud. 
+
 This project is a fast-paced game about obtaining milk (the final objective). Bullets, enemies, boxes and you have physics.
 This game may take a bit to load because of the map size. If it says "not responding" uhh please wait I guess...
 
@@ -8,10 +10,12 @@ Shoot your way through enemies and parkour your way out of dangerous situations 
 Boxes are breakable btw.
 
 Instructions:
-A to move Left
-D to move Right
-Space to Jump
-T to talk
-M1 to shoot
+'A' to move Left
+'D' to move Right
+'Space' to Jump
+'T' to talk
+'M1' to shoot
+
+Enjoy!
 
 ---
