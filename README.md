@@ -18,4 +18,9 @@ Instructions:
 
 Enjoy!
 
+Install Instructions:
+
+Download "Get Milk"
+Run "GetMilk.exe"
+
 ---
