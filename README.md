@@ -24,4 +24,6 @@ Install Instructions:
 Download "Get Milk"
 Run "GetMilk.exe"
 
+If the folder doesn't work, install the .zip, unzip the folder and run the .exe there
+
 ---
